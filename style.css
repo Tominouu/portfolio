@@ -5,6 +5,14 @@
     font-family: 'Inter', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+}
+
 body {
     background-color: #0f0f0f;
     color: #ffffff;

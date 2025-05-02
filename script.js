@@ -8,6 +8,8 @@ gsap.config({
     autoSleep: 60
 });
 
+
+
 // Animation du curseur personnalisé optimisée
 const cursor = document.querySelector('.cursor');
 const cursorTrail = Array.from({length: 5}, () => cursor.cloneNode(true));
@@ -429,3 +431,4 @@ window.addEventListener('DOMContentLoaded', () => {
     projectImageHoverEffect();
     hoverDistortionEffect();
 });
+
