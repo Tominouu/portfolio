@@ -3,7 +3,7 @@ name: Deploy to my server
 on:
   push:
     branches:
-      - main  # Change ici si ton site est sur une autre branche
+      - main  
 
 jobs:
   ftp-deploy:
