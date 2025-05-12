@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déploiement FTP via github actions</title>
+</head>
+<body>
+    <h1>Le déploiement FTP via github actions</h1>
+    <p>
+        Créer un dossier .github à la racine du projet, ensuite dedans un dossier workflows, puis un fichier deploy.yml
+    </p>
+    <p>Mettez le texte suivant, et modifiez par vos informations</p>
+    <pre><code>
+        name: Deploy to InfinityFree
+
+        on:
+        push:
+            branches:
+            - main  # Change ici si ton site est sur une autre branche
+
+        jobs:
+        ftp-deploy:
+            name: Upload via FTP
+            runs-on: ubuntu-latest
+            steps:
+            - name: Checkout repo
+                uses: actions/checkout@v3
+
+            - name: Deploy files via FTP
+                uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+                with:
+                server: ftpupload.net
+                username: ${{ secrets.FTP_USERNAME }} 
+                password: ${{ secrets.FTP_PASSWORD }}
+                local-dir: ./
+                server-dir: /tominou.tech/htdocs/
+    </code></pre>
+    <br>
+    <p>Ajoutes des secrets à votre repo github: FTP_USERNAME, FTP_PASSWORD</p>
+
+    
+    
+</body>
+</html>
