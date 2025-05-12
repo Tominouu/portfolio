@@ -12,29 +12,29 @@
     </p>
     <p>Mettez le texte suivant, et modifiez par vos informations</p>
     <pre><code>
-        name: Deploy to InfinityFree
+name: Deploy to my server
 
-        on:
-        push:
-            branches:
-            - main  # Change ici si ton site est sur une autre branche
+on:
+    push:
+    branches:
+        - main  
 
-        jobs:
-        ftp-deploy:
-            name: Upload via FTP
-            runs-on: ubuntu-latest
-            steps:
-            - name: Checkout repo
-                uses: actions/checkout@v3
+jobs:
+    ftp-deploy:
+    name: Upload via FTP
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout repo
+        uses: actions/checkout@v3
 
-            - name: Deploy files via FTP
-                uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-                with:
-                server: ftpupload.net
-                username: ${{ secrets.FTP_USERNAME }} 
-                password: ${{ secrets.FTP_PASSWORD }}
-                local-dir: ./
-                server-dir: /tominou.tech/htdocs/
+        - name: Deploy files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+            server: ftp.cluster029.hosting.ovh.net
+            username: ${{ secrets.FTP_USERNAME }} 
+            password: ${{ secrets.FTP_PASSWORD }}
+            local-dir: ./
+            server-dir: /www/
     </code></pre>
     <br>
     <p>Ajoutes des secrets à votre repo github: FTP_USERNAME, FTP_PASSWORD</p>
