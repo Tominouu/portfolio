@@ -407,7 +407,36 @@ const hoverDistortionEffect = () => {
 };
 
 // Initialisation des animations
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    // Effet de parallaxe pour la section photo
+    window.addEventListener('scroll', function() {
+        const photoSection = document.querySelector('.photo-transition');
+        const photoBackground = document.querySelector('.photo-background');
+        if (photoSection) {
+            const scrolled = window.pageYOffset;
+            if (photoBackground) {
+                const rect = photoSection.getBoundingClientRect();
+                const speed = 0.5;
+                
+                if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                    const yPos = (rect.top * speed);
+                    photoBackground.style.transform = `translateY(${yPos}px)`;
+                }
+            }
+
+            // Effet de fade pour le contenu
+            const content = document.querySelector('.parallax-content');
+            const sectionPos = photoSection.offsetTop;
+            const sectionHeight = photoSection.offsetHeight;
+            const scrollPos = window.pageYOffset + window.innerHeight;
+
+            if (scrollPos > sectionPos && scrollPos < sectionPos + sectionHeight + window.innerHeight) {
+                const opacity = (scrollPos - sectionPos) / window.innerHeight;
+                content.style.opacity = Math.min(opacity, 1);
+                content.style.transform = `translateY(${Math.max(30 - opacity * 30, 0)}px)`;
+            }
+        }
+    });
     // Initialisation du bouton photo
     gsap.set('.photo-button', {
         opacity: 0,
