@@ -12,167 +12,219 @@
     <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
-    <title>Portfolio Créatif</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Tom Leclercq | Développeur Fullstack</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-    <div class="loader">
-        <div class="loader-text">Chargement...</div>
-    </div>
-
-    <div class="back-to-top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M7 14l5-5 5 5z"/>
-        </svg>
-    </div>
-
-    <section class="hero">
-        <h1 class="hero-title">Bonjour, <br>Je suis Tom Leclercq</h1>
-        <p class="hero-subtitle">Développeur Fullstack Créatif</p>
-        
-    </section>
-
-    <div class="marquee">
-        <div class="marquee-inner">
-            <div class="marquee-text">PORTFOLIO CRÉATIF</div>
-            <div class="marquee-text">DESIGN & CODE</div>
-            <div class="marquee-text">PORTFOLIO CRÉATIF</div>
-            <div class="marquee-text">DESIGN & CODE</div>
-        </div>
-    </div>
-
-    <section class="projects">
-        <h2 class="projects-title">Projets Sélectionnés</h2>
-
-        
-        <div class="project-grid">
-            <a href="https://hubline.me" target="_blank">
-            <div class="project-item">
-                <div class="project-image">
-                    <img src="assets/phone.webp" alt="Hubline">
-                </div>
-                <div class="project-content">
-                    <div class="project-number">01</div>
-                    <h3 class="project-title">Hubline</h3>
-                    <p class="project-description">
-                        Un réseau social innovant développé en PHP permettant aux étudiants de se connecter, partager des ressources et collaborer sur des projets académiques.
-                    </p>
-                    <div class="skill">PHP / HTML / CSS / JS / SQL</div>
-                </div>
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#accueil" class="nav-logo">TL /&gt;</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#a-propos" class="nav-link"><span>01.</span> À propos</a></li>
+                <li class="nav-item"><a href="#projets" class="nav-link"><span>02.</span> Projets</a></li>
+                <li class="nav-item"><a href="#competences" class="nav-link"><span>03.</span> Compétences</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link"><span>04.</span> Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-            </a>
+        </nav>
+    </header>
 
-            <div class="project-item">
-                <div class="project-image">
-                    <a href="https://capc-mmi.netlify.app/" target="_blank">
-                    <img src="assets/capc.webp" alt="CAPC">
-                    </a>
-                </div>
-                <div class="project-content">
-                    <a href="https://capc-mmi.netlify.app/" target="_blank">
-                    <div class="project-number">02</div>
-                    <h3 class="project-title">CAPC</h3>
-                    <p class="project-description">
-                        Refonte complète du site web du CAPC musée d'art contemporain de Bordeaux, mettant l'accent sur une expérience utilisateur immersive et une présentation dynamique des expositions et collections.
-                    </p>
-                    <div class="skill">HTML / CSS / JS</div>
-                    </a>
-                </div>
-            </div>
+    <main>
+        <div class="container">
 
-            <div class="project-item">
-                <div class="project-image">
-                    <a href="https://github.com/Tominouu/Blog_Art25_groupe_6" target="_blank">
-                    <img src="assets/blogart.webp" alt="Blogart">
-                    </a>
-                </div>
-                <div class="project-content">
-                    <a href="https://github.com/Tominouu/Blog_Art25_groupe_6" target="_blank">
-                    <div class="project-number">03</div>
-                    <h3 class="project-title">Blog Art</h3>
-                    <p class="project-description">
-                        Réalisation d'un blog d'articles avec une interface simple en PHP, permettant aux utilisateurs de partager des articles et d'interagir avec les contenus.
-                    </p>
-                    <div class="skill">PHP / HTML / CSS / JS</div>
-                    </a>
-                </div>
-            </div>
+            <section id="accueil" class="hero">
+                <p class="hero-intro">Bonjour, je suis</p>
+                <h1 class="hero-name">Tom Leclercq.</h1>
+                <h2 class="hero-tagline" id="typing-text"></h2>
+                <p class="hero-description">
+                    Étudiant en BUT MMI, je me spécialise dans le développement fullstack. 
+                    Je transforme des concepts en expériences numériques fluides, performantes et intuitives.
+                </p>
+                <a href="#projets" class="cta-button">Voir mes réalisations</a>
+            </section>
 
-            <div class="project-item">
-                <div class="project-image">
-                    <a href="https://qrmmi.netlify.app/" target="_blank">
-                    <img src="assets/qrmmi.webp" alt="CAPC">
-                    </a>
+            <section id="a-propos" class="section reveal">
+                <h2 class="section-title"><span class="section-number">01.</span> À propos de moi</h2>
+                <div class="about-flex-container">
+                    <div class="about-text-content">
+                        <p>Passionné par la résolution de problèmes et le développement web, j'ai suivi un parcours orienté vers le numérique depuis mon bac STI2D (Développement Web, Électronique, Étude de systèmes etc).</p>
+                        <p>Mon cursus en BUT MMI m'a permis de solidifier mes compétences en développement front-end et back-end et de développer mon côté créatif grâce à des projets variés.</p>
+                        <p>Mon objectif est de maîtriser l'environnement numérique autour de moi afin de proposer des solutions innovantes qui permettront de changer les choses.</p>
+                        <p>Lorsque je ne code pas, je me détends en faisant de la photographie et de la vidéo. Une passion qui me permet de me déconnecter et d'être plus efficace de retour au travail.</p>
+                    </div>
+                    <div class="about-image-wrapper">
+                        <img src="assets/tom_leclercq_profile.jpg" alt="Photo de profil de Tom Leclercq" class="profile-picture">
+                    </div>
                 </div>
-                <div class="project-content">
-                    <a href="https://qrmmi.netlify.app/" target="_blank">
-                    <div class="project-number">04</div>
-                    <h3 class="project-title">Générateur de QR-CODE</h3>
-                    <p class="project-description">
+            </section>
+
+            <section id="projets" class="section reveal">
+                <h2 class="section-title"><span class="section-number">02.</span> Quelques projets</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <a href="https://hubline.me" target="_blank">
+                                <img src="assets/hubline.webp" alt="Aperçu du projet Hubline" class="project-image">
+                            </a>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-top">
+                                <h3 class="project-title">Hubline</h3>
+                                <div class="project-links">
+                                    <a href="#" title="Code Source" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                                    <a href="https://hubline.me" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                </div>
+                            </div>
+                            <p class="project-description">Un réseau social innovant développé en PHP permettant aux étudiants de se connecter, partager des ressources et collaborer sur des projets académiques.</p>
+                            <ul class="project-tech-list">
+                                <li>PHP</li><li>HTML</li><li>CSS</li><li>JS</li><li>SQL</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <a href="https://capc-mmi.netlify.app/" target="_blank">
+                                <img src="assets/capc.webp" alt="Aperçu du projet CAPC" class="project-image">
+                            </a>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-top">
+                                <h3 class="project-title">CAPC</h3>
+                                <div class="project-links">
+                                    <a href="https://github.com/Tominouu/CAPC" title="Code Source" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                                    <a href="https://capc-mmi.netlify.app/" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                </div>
+                            </div>
+                            <p class="project-description">Refonte complète du site web du CAPC musée d'art contemporain de Bordeaux, mettant l'accent sur une expérience utilisateur immersive et une présentation dynamique des expositions et collections.</p>
+                            <ul class="project-tech-list">
+                                <li>HTML</li><li>CSS</li><li>JS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <a href="https://blogart-groupe-6.osc-fr1.scalingo.io/" target="_blank">
+                                <img src="assets/blogart.webp" alt="Aperçu du projet BlogArt" class="project-image">
+                            </a>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-top">
+                                <h3 class="project-title">Blog Art</h3>
+                                <div class="project-links">
+                                    <a href="https://github.com/Tominouu/Blog_Art25_groupe_6" title="Code Source" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                                    <a href="https://blogart-groupe-6.osc-fr1.scalingo.io/" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                            Réalisation d'un blog d'articles avec une interface simple en PHP, permettant aux utilisateurs de partager des articles et d'interagir avec les contenus.
+                            </p>
+                            <ul class="project-tech-list">
+                                <li>PHP</li><li>HTML</li><li>CSS</li><li>JS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <a href="https://qrmmi.netlify.app/" target="_blank">
+                                <img src="assets/qrmmi.webp" alt="Aperçu du projet QR Code" class="project-image">
+                            </a>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-top">
+                                <h3 class="project-title">Générateur de QR-CODE</h3>
+                                <div class="project-links">
+                                    <a href="https://github.com/Tominouu/qr-code-generator" title="Code Source" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                                    <a href="https://qrmmi.netlify.app/" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                                </div>
+                            </div>
+                            <p class="project-description">
                         Création d'un générateur de QR-Code en ligne Open-Source, permettant aux utilisateurs de créer et de télécharger des QR-Codes personnalisés (couleur personnalisable) pour divers usages.
-                    </p>
-                    <div class="skill">React / Tailwind CSS </div>
-                    </a>
+                            </p>
+                            <ul class="project-tech-list">
+                                <li>PHP</li><li>HTML</li><li>CSS</li><li>JS</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="photo-transition">
-        <div class="photo-background"></div>
-        <div class="parallax-container">
-            <div class="parallax-content">
-                <h2 class="transition-title">Découvrez mon univers photographique</h2>
-                <a href="photographie/first.html" class="photo-link">Découvrir mes photographies</a>
-            </div>
-        </div>
-    </section>
+            </section>
+            
+            <section id="competences" class="section reveal">
+                <h2 class="section-title"><span class="section-number">03.</span> Compétences techniques</h2>
+                <div class="skills-grid">
+                    <div>
+                        <h4>Langages</h4>
+                        <ul>
+                            <li>HTML / CSS</li>
+                            <li>Python</li>
+                            <li>Bash</li>
+                            <li>JavaScript</li>
+                            <li>PHP</li>
+                            <li>SQL</li>
+                            <li>C#</li>
+                            <li>Markdown</li>
+                            <li>Ruby on rails</li>
+                            <li>JSON</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Frameworks & Librairies</h4>
+                        <ul>
+                            <li>Laravel</li>
+                            <li>Bootstrap</li>
+                            <li>Tailwind CSS</li>
+                            <li>React (en apprentissage)</li>
+                            <li>GSAP</li>
+                            <li>Selenium (Python)</li>
 
-    <section class="about">
-        <h2 class="about-title">À Propos</h2>
-        <div class="about-content">
-            <p class="about-text">
-                Je m'appelle Tom Leclercq, 18 ans, étudiant en première année de BUT MMI. Passionné par les nouvelles technologies et le jeu vidéo, j’ai suivi un bac STI2D spécialité SIN. Je me forme actuellement aux langages web (HTML, CSS, JS, PHP, SQL) et souhaite me spécialiser dans les bases de données pour contribuer à des projets numériques innovants.
-            </p>
-        </div>
-        <div class="skills">
-            <div class="skill">HTML/CSS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">GSAP</div>
-            <div class="skill">PHP</div>
-            <div class="skill">Three.js</div>
-            <div class="skill">UI/UX Design</div>
-            <div class="skill">Python</div>
-        </div>
-    </section>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Outils & Divers</h4>
+                        <ul>
+                            <li>Git & GitHub</li>
+                            <li>Windows & Linux & MacOS</li>
+                            <li>SSH</li>
+                            <li>Vs Code</li>
+                            <li>Ollama</li>
+                            <li>FileZilla</li>
+                            <li>Figma</li>
+                            <li>MySQL / MariaDB</li>
+                            <li>API REST</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <section class="contact">
-        <h2 class="contact-title">Contact</h2>
-        <p class="contact-text">
-            Vous avez un projet intéressant en tête ? Je serais ravi d'en discuter et de voir comment nous pourrions collaborer.
-        </p>
-        <form class="contact-form" action="https://formspree.io/f/xeoqzazv" method="POST">
-            <div class="form-group">
-                <input type="text" placeholder="Votre Nom" required>
-            </div>
-            <div class="form-group">
-                <input type="email" placeholder="Votre Email" required>
-            </div>
-            <div class="form-group">
-                <textarea placeholder="Votre Message" required></textarea>
-            </div>
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
+            <section id="contact" class="section reveal">
+                <h2 class="section-title"><span class="section-number">04.</span> Contact</h2>
+                <div class="contact-content">
+                    <h3>Parlons de votre projet.</h3>
+                    <p>Je suis actuellement en alternance chez Couach mais je suis ouvert à de nouvelles opportunités. N'hésitez pas à me contacter pour en discuter.</p>
+                    <a href="mailto:tom.leclercq@mmibordeaux.com" class="cta-button">Envoyer un e-mail</a>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <footer class="footer">
-        <p>© 2025 Portfolio Créatif. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="https://github.com/Tominouu" target="_blank" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+            <a href="https://www.linkedin.com/in/tom-leclercq-823120332/" target="_blank" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        </div>
+        <p>Conçu et développé par Tom Leclercq.</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
