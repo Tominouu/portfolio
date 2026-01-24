@@ -236,6 +236,33 @@ body {
     gap: 1rem;
 }
 
+.project-contributors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0.75rem 0 1rem;
+    padding: 0;
+}
+
+.project-contributors-list li {
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--accent-color);
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 999px; /* effet "bulle / tag" */
+    background-color: var(--accent-color-light);
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-contributors-list li:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+}
+
+
 .project-links .feather {
     width: 20px;
     height: 20px;
