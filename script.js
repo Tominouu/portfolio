@@ -1,26 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ===== EFFET SPOTLIGHT & CURSEUR PERSONNALISÉ =====
-    const body = document.body;
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
+    // ===== THEME TOGGLE =====
+    const themeToggle = document.querySelector('.theme-toggle');
+    const root = document.documentElement;
 
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (!isTouchDevice) {
-        window.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e;
-            
-            body.style.setProperty('--mouse-x', `${clientX}px`);
-            body.style.setProperty('--mouse-y', `${clientY}px`);
-            
-            cursorDot.style.left = `${clientX}px`;
-            cursorDot.style.top = `${clientY}px`;
-            cursorOutline.style.left = `${clientX}px`;
-            cursorOutline.style.top = `${clientY}px`;
-        });
+    function getPreferredTheme() {
+        const saved = localStorage.getItem('theme');
+        if (saved) return saved;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
 
-    // ===== ANIMATION DE FRAPPE (TYPING) =====
+    function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }
+
+    applyTheme(getPreferredTheme());
+
+    themeToggle.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+        }
+    });
+
+    // ===== TYPING ANIMATION =====
     const typingTextElement = document.getElementById('typing-text');
     if (typingTextElement) {
         const textToType = "Je conçois et développe pour le web.";
@@ -29,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (index < textToType.length) {
                 typingTextElement.textContent += textToType.charAt(index);
                 index++;
-                setTimeout(type, 70); // Vitesse de frappe
+                setTimeout(type, 65);
             }
         }
         type();
     }
 
-    // ===== APPARITION DES SECTIONS AU DÉFILEMENT (Intersection Observer) =====
+    // ===== SCROLL REVEAL =====
     const sectionsToReveal = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -47,35 +55,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     sectionsToReveal.forEach(section => observer.observe(section));
 
-    // ===== MENU HAMBURGER =====
+    // ===== HAMBURGER MENU =====
     const hamburger = document.querySelector(".hamburger");
     const navMenu = document.querySelector(".nav-menu");
 
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
-        body.classList.toggle("blur-effect"); // Ajoute/retire le flou
+        document.body.classList.toggle("blur-effect");
     });
 
     document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
-        body.classList.remove("blur-effect"); // Retire le flou
+        document.body.classList.remove("blur-effect");
     }));
-    
-    // ===== CACHER/AFFICHER LE HEADER AU SCROLL =====
+
+    // ===== HIDE/SHOW HEADER ON SCROLL =====
     let lastScrollTop = 0;
     const header = document.querySelector('.header');
-    
-    window.addEventListener("scroll", function() {
-       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-       if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
-           // Scroll vers le bas
-           header.style.top = `-${header.offsetHeight}px`;
-       } else {
-           // Scroll vers le haut
-           header.style.top = "0";
-       }
-       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight) {
+            header.style.top = `-${header.offsetHeight}px`;
+        } else {
+            header.style.top = "0";
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }, false);
 });

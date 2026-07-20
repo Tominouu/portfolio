@@ -16,25 +16,27 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
     <header class="header">
         <nav class="navbar container">
-            <a href="#accueil" class="nav-logo">TL /&gt;</a>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="#a-propos" class="nav-link"><span>01.</span> À propos</a></li>
-                <li class="nav-item"><a href="#projets" class="nav-link"><span>02.</span> Projets</a></li>
-                <li class="nav-item"><a href="#competences" class="nav-link"><span>03.</span> Compétences</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link"><span>04.</span> Contact</a></li>
+                <li class="nav-item"><a href="#a-propos" class="nav-link">À propos</a></li>
+                <li class="nav-item"><a href="#projets" class="nav-link">Projets</a></li>
+                <li class="nav-item"><a href="#competences" class="nav-link">Compétences</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Changer de thème">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </nav>
     </header>
@@ -54,13 +56,13 @@
             </section>
 
             <section id="a-propos" class="section reveal">
-                <h2 class="section-title"><span class="section-number">01.</span> À propos de moi</h2>
+                <h2 class="section-title">À propos</h2>
                 <div class="about-flex-container">
                     <div class="about-text-content">
                         <p>Passionné par la résolution de problèmes et le développement web, j'ai suivi un parcours orienté vers le numérique depuis mon bac STI2D (Développement Web, Électronique, Étude de systèmes etc).</p>
                         <p>Mon cursus en BUT MMI m'a permis de solidifier mes compétences en développement front-end et back-end et de développer mon côté créatif grâce à des projets variés.</p>
                         <p>Mon objectif est de maîtriser l'environnement numérique autour de moi afin de proposer des solutions innovantes qui permettront de changer les choses.</p>
-                        <p>Lorsque je ne code pas, je me détends en faisant de la <a href="https://galerie.tom-leclercq.fr" style="color: #969697;">photographie</a> et de la vidéo. Une passion qui me permet de me déconnecter et d'être plus efficace de retour au travail.</p>
+
                     </div>
                     <div class="about-image-wrapper">
                         <img src="assets/IMG_3165.jpeg" alt="Photo de profil de Tom Leclercq" class="profile-picture">
@@ -69,7 +71,7 @@
             </section>
 
             <section id="projets" class="section reveal">
-                <h2 class="section-title"><span class="section-number">02.</span> Quelques projets</h2>
+                <h2 class="section-title">Projets</h2>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image-container">
@@ -86,12 +88,12 @@
                                     <a href="https://tind-art.netlify.app/" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
                                 </div>
                             </div>
-                            <p class="project-description">Réalisation d'un tinder artistique pour le musée des beaux-arts de Bordeaux <a href="https://www.musba-bordeaux.fr/" target="_blank" rel="noopener noreferrer" style="color: #a8a8a8; text-decoration: none; font-weight: bold;">(MUSBA)</a>.</p>
+                            <p class="project-description">Réalisation d'un tinder artistique pour le musée des beaux-arts de Bordeaux <a href="https://www.musba-bordeaux.fr/" target="_blank" rel="noopener noreferrer">(MUSBA)</a>.</p>
                             <ul class="project-contributors-list">
-                                <a href="https://noe.blanqu.art/" style="text-decoration: none;" target="_blank"><li>Noé Blanquart</li></a>
-                                <a href="https://lili-jeanneflourez.fr/" style="text-decoration: none;" target="_blank"><li>Lili-Jeanne Flourez</li></a>
-                                <a href="https://portfolio-charlotte-duconseil.netlify.app/" style="text-decoration: none;" target="_blank"><li>Charlotte Duconseil</li></a>
-                                <a href="https://ywannobilet.fr/" style="text-decoration: none;" target="_blank"><li>Ywan Nobilet</li></a>
+                                <a href="https://noe.blanqu.art/" target="_blank"><li>Noé Blanquart</li></a>
+                                <a href="https://lili-jeanneflourez.fr/" target="_blank"><li>Lili-Jeanne Flourez</li></a>
+                                <a href="https://portfolio-charlotte-duconseil.netlify.app/" target="_blank"><li>Charlotte Duconseil</li></a>
+                                <a href="https://ywannobilet.fr/" target="_blank"><li>Ywan Nobilet</li></a>
                             </ul>
                             <ul class="project-tech-list">
                                 <li>HTML</li>
@@ -117,10 +119,10 @@
                             </div>
                             <p class="project-description">Conception d'une interface intégrant un onboarding dédié à la personnalisation de l'apprentissage par l'élève.</p>
                             <ul class="project-contributors-list">
-                                <a href="https://noe.blanqu.art/" style="text-decoration: none;" target="_blank"><li>Noé Blanquart</li></a>
-                                <a href="https://lili-jeanneflourez.fr/" style="text-decoration: none;" target="_blank"><li>Lili-Jeanne Flourez</li></a>
-                                <a href="https://portfolio-charlotte-duconseil.netlify.app/" style="text-decoration: none;" target="_blank"><li>Charlotte Duconseil</li></a>
-                                <a href="https://ywannobilet.fr/" style="text-decoration: none;" target="_blank"><li>Ywan Nobilet</li></a>
+                                <a href="https://noe.blanqu.art/" target="_blank"><li>Noé Blanquart</li></a>
+                                <a href="https://lili-jeanneflourez.fr/" target="_blank"><li>Lili-Jeanne Flourez</li></a>
+                                <a href="https://portfolio-charlotte-duconseil.netlify.app/" target="_blank"><li>Charlotte Duconseil</li></a>
+                                <a href="https://ywannobilet.fr/" target="_blank"><li>Ywan Nobilet</li></a>
                             </ul>
                             <ul class="project-tech-list">
                                 <li>FIGMA</li>
@@ -144,10 +146,10 @@
                             </div>
                             <p class="project-description">Création d'un jeu vidéo sur Unity, le but est de récolter un maximum d'objets dans un temps limité.</p>
                             <ul class="project-contributors-list">
-                                <a href="https://noe.blanqu.art/" style="text-decoration: none;" target="_blank"><li>Noé Blanquart</li></a>
-                                <a href="https://lili-jeanneflourez.fr/" style="text-decoration: none;" target="_blank"><li>Lili-Jeanne Flourez</li></a>
-                                <a href="https://portfolio-charlotte-duconseil.netlify.app/" style="text-decoration: none;" target="_blank"><li>Charlotte Duconseil</li></a>
-                                <a href="https://ywannobilet.fr/" style="text-decoration: none;" target="_blank"><li>Ywan Nobilet</li></a>
+                                <a href="https://noe.blanqu.art/" target="_blank"><li>Noé Blanquart</li></a>
+                                <a href="https://lili-jeanneflourez.fr/" target="_blank"><li>Lili-Jeanne Flourez</li></a>
+                                <a href="https://portfolio-charlotte-duconseil.netlify.app/" target="_blank"><li>Charlotte Duconseil</li></a>
+                                <a href="https://ywannobilet.fr/" target="_blank"><li>Ywan Nobilet</li></a>
                             </ul>
                             <ul class="project-tech-list">
                                 <li>Unity</li>
@@ -173,9 +175,9 @@
                             <p class="project-description">Refonte complète du site web du CAPC musée d'art contemporain de Bordeaux, 
                                 mettant l'accent sur une expérience utilisateur immersive et une présentation dynamique des expositions et collections.</p>
                             <ul class="project-contributors-list">
-                                <a href="https://lili-jeanneflourez.fr/" style="text-decoration: none;" target="_blank"><li>Lili-Jeanne Flourez</li></a>
-                                <a href="#" style="text-decoration: none;" target="_blank"><li>Antoine Basset</li></a>
-                                <a href="#" style="text-decoration: none;" target="_blank"><li>Leon Carter</li></a>
+                                <a href="https://lili-jeanneflourez.fr/" target="_blank"><li>Lili-Jeanne Flourez</li></a>
+                                <a href="#" target="_blank"><li>Antoine Basset</li></a>
+                                <a href="#" target="_blank"><li>Leon Carter</li></a>
                             </ul>
                             <ul class="project-tech-list">
                                 <li>HTML</li><li>CSS</li><li>JS</li>
@@ -200,9 +202,9 @@
                             Réalisation d'un blog d'articles avec une interface simple en PHP, permettant aux utilisateurs de partager des articles et d'interagir avec les contenus.
                             </p>
                             <ul class="project-contributors-list">
-                                <a href="https://lili-jeanneflourez.fr/" style="text-decoration: none;" target="_blank"><li>Lili-Jeanne Flourez</li></a>
-                                <a href="#" style="text-decoration: none;" target="_blank"><li>Antoine Basset</li></a>
-                                <a href="#" style="text-decoration: none;" target="_blank"><li>Leon Carter</li></a>
+                                <a href="https://lili-jeanneflourez.fr/" target="_blank"><li>Lili-Jeanne Flourez</li></a>
+                                <a href="#" target="_blank"><li>Antoine Basset</li></a>
+                                <a href="#" target="_blank"><li>Leon Carter</li></a>
                             </ul>
                             <ul class="project-tech-list">
                                 <li>PHP</li><li>HTML</li><li>CSS</li><li>JS</li>
@@ -256,7 +258,7 @@
             </section>
             
             <section id="competences" class="section reveal">
-                <h2 class="section-title"><span class="section-number">03.</span> Compétences techniques</h2>
+                <h2 class="section-title">Compétences</h2>
                 <div class="skills-grid">
                     <div>
                         <h4>Langages</h4>
@@ -303,7 +305,7 @@
             </section>
 
             <section id="contact" class="section reveal">
-                <h2 class="section-title"><span class="section-number">04.</span> Contact</h2>
+                <h2 class="section-title">Contact</h2>
                 <div class="contact-content">
                     <h3>Parlons de votre projet.</h3>
                     <p>Je suis actuellement en alternance chez Couach mais je suis ouvert à de nouvelles opportunités. N'hésitez pas à me contacter pour en discuter.</p>
