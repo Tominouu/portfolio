@@ -1,328 +1,359 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Tom Leclercq, développeur web spécialisé en création de sites modernes et responsives. J'étudie actuellement en BUT MMI à l'IUT Bordeaux Montaigne. Consultez mes projets et contactez-moi.">
-    <meta name="keywords" content="Tom Leclercq, portfolio, développeur web, designer, projets web, HTML, CSS, JavaScript, PHP, SQL">
-    <meta name="author" content="Tom Leclercq">
-    <link rel="canonical" href="https://tom-leclercq.fr/">
-    <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="assets/favicon/site.webmanifest" />
-    <title>Tom Leclercq | Développeur Fullstack</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="header">
-        <nav class="navbar container">
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#a-propos" class="nav-link">À propos</a></li>
-                <li class="nav-item"><a href="#projets" class="nav-link">Projets</a></li>
-                <li class="nav-item"><a href="#competences" class="nav-link">Compétences</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="theme-toggle" aria-label="Changer de thème">
-                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08090b" />
+    <meta
+      name="description"
+      content="Portfolio de Tom Leclercq, développeur web et designer numérique."
+    />
+    <title>Tom Leclercq — Digital maker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="shaderCanvas" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="#a-propos">À propos</a><a href="#projets">Projets</a
+        ><a href="#competences">Stack</a
+        ><a href="#contact" class="nav-contact">Contact <b>↗</b></a>
+      </nav>
     </header>
-
     <main>
-        <div class="container">
-
-            <section id="accueil" class="hero">
-                <p class="hero-intro">Bonjour, je suis</p>
-                <h1 class="hero-name">Tom Leclercq.</h1>
-                <h2 class="hero-tagline" id="typing-text"></h2>
-                <p class="hero-description">
-                    Étudiant en BUT MMI, je me spécialise dans le développement fullstack. 
-                    Je transforme des concepts en expériences numériques fluides, performantes et intuitives.
-                </p>
-                <a href="#projets" class="cta-button">Voir mes réalisations</a>
-            </section>
-
-            <section id="a-propos" class="section reveal">
-                <h2 class="section-title">À propos</h2>
-                <div class="about-flex-container">
-                    <div class="about-text-content">
-                        <p>Passionné par la résolution de problèmes et le développement web, j'ai suivi un parcours orienté vers le numérique depuis mon bac STI2D (Développement Web, Électronique, Étude de systèmes etc).</p>
-                        <p>Mon cursus en BUT MMI m'a permis de solidifier mes compétences en développement front-end et back-end et de développer mon côté créatif grâce à des projets variés.</p>
-                        <p>Mon objectif est de maîtriser l'environnement numérique autour de moi afin de proposer des solutions innovantes qui permettront de changer les choses.</p>
-
-                    </div>
-                    <div class="about-image-wrapper">
-                        <img src="assets/IMG_3165.jpeg" alt="Photo de profil de Tom Leclercq" class="profile-picture">
-                    </div>
-                </div>
-            </section>
-
-            <section id="projets" class="section reveal">
-                <h2 class="section-title">Projets</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <a href="https://tind-art.netlify.app/" target="_blank">
-                                <img src="assets/tindart.webp" alt="Aperçu du projet tindart" class="project-image">
-                            </a>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-top">
-                                <h3 class="project-title">Tind'Art</h3>
-                                <div class="project-links">
-                                    <a href="https://youtu.be/SnoezmPMTOA" title="Voir la vidéo" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></a>
-                                    <a href="https://github.com/Tominouu/tind-art" title="Code Source" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                    <a href="https://tind-art.netlify.app/" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-                                </div>
-                            </div>
-                            <p class="project-description">Réalisation d'un tinder artistique pour le musée des beaux-arts de Bordeaux <a href="https://www.musba-bordeaux.fr/" target="_blank" rel="noopener noreferrer">(MUSBA)</a>.</p>
-                            <ul class="project-contributors-list">
-                                <a href="https://noe.blanqu.art/" target="_blank"><li>Noé Blanquart</li></a>
-                                <a href="https://lili-jeanneflourez.fr/" target="_blank"><li>Lili-Jeanne Flourez</li></a>
-                                <a href="https://portfolio-charlotte-duconseil.netlify.app/" target="_blank"><li>Charlotte Duconseil</li></a>
-                                <a href="https://ywannobilet.fr/" target="_blank"><li>Ywan Nobilet</li></a>
-                            </ul>
-                            <ul class="project-tech-list">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JS</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <a href="https://www.figma.com/proto/xdqcK8nvsILtQJKdiNQLVB/R%C3%A9viser-avec-mathAL%C3%89A?page-id=0%3A1&node-id=44-36&viewport=399%2C297%2C0.13&t=rw2Pufg4yBiqMjst-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=44%3A36" target="_blank">
-                                <img src="assets/mathalea.webp" alt="Aperçu du projet MathALÉA" class="project-image">
-                            </a>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-top">
-                                <h3 class="project-title">MathALÉA</h3>
-                                <div class="project-links">
-                                    <a href="#" title="Code Source" target="_blank" style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                    <a href="https://www.figma.com/proto/xdqcK8nvsILtQJKdiNQLVB/R%C3%A9viser-avec-mathAL%C3%89A?page-id=0%3A1&node-id=44-36&viewport=399%2C297%2C0.13&t=rw2Pufg4yBiqMjst-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=44%3A36" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-                                </div>
-                            </div>
-                            <p class="project-description">Conception d'une interface intégrant un onboarding dédié à la personnalisation de l'apprentissage par l'élève.</p>
-                            <ul class="project-contributors-list">
-                                <a href="https://noe.blanqu.art/" target="_blank"><li>Noé Blanquart</li></a>
-                                <a href="https://lili-jeanneflourez.fr/" target="_blank"><li>Lili-Jeanne Flourez</li></a>
-                                <a href="https://portfolio-charlotte-duconseil.netlify.app/" target="_blank"><li>Charlotte Duconseil</li></a>
-                                <a href="https://ywannobilet.fr/" target="_blank"><li>Ywan Nobilet</li></a>
-                            </ul>
-                            <ul class="project-tech-list">
-                                <li>FIGMA</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <a href="https://kaddie.itch.io/shopping-panic" target="_blank">
-                                <img src="assets/shopping.webp" alt="Aperçu du projet shopping panic" class="project-image">
-                            </a>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-top">
-                                <h3 class="project-title">Shopping Panic</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/Tominouu/Projet-Unity-Grp8" title="Code Source" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                    <a href="https://kaddie.itch.io/shopping-panic" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-                                </div>
-                            </div>
-                            <p class="project-description">Création d'un jeu vidéo sur Unity, le but est de récolter un maximum d'objets dans un temps limité.</p>
-                            <ul class="project-contributors-list">
-                                <a href="https://noe.blanqu.art/" target="_blank"><li>Noé Blanquart</li></a>
-                                <a href="https://lili-jeanneflourez.fr/" target="_blank"><li>Lili-Jeanne Flourez</li></a>
-                                <a href="https://portfolio-charlotte-duconseil.netlify.app/" target="_blank"><li>Charlotte Duconseil</li></a>
-                                <a href="https://ywannobilet.fr/" target="_blank"><li>Ywan Nobilet</li></a>
-                            </ul>
-                            <ul class="project-tech-list">
-                                <li>Unity</li>
-                                <li>C#</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <a href="https://capc-mmi.netlify.app/" target="_blank">
-                                <img src="assets/capc.webp" alt="Aperçu du projet CAPC" class="project-image">
-                            </a>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-top">
-                                <h3 class="project-title">CAPC</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/Tominouu/CAPC" title="Code Source" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                    <a href="https://capc-mmi.netlify.app/" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-                                </div>
-                            </div>
-                            <p class="project-description">Refonte complète du site web du CAPC musée d'art contemporain de Bordeaux, 
-                                mettant l'accent sur une expérience utilisateur immersive et une présentation dynamique des expositions et collections.</p>
-                            <ul class="project-contributors-list">
-                                <a href="https://lili-jeanneflourez.fr/" target="_blank"><li>Lili-Jeanne Flourez</li></a>
-                                <a href="#" target="_blank"><li>Antoine Basset</li></a>
-                                <a href="#" target="_blank"><li>Leon Carter</li></a>
-                            </ul>
-                            <ul class="project-tech-list">
-                                <li>HTML</li><li>CSS</li><li>JS</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <a href="https://blogart-groupe-6.osc-fr1.scalingo.io/" target="_blank">
-                                <img src="assets/blogart.webp" alt="Aperçu du projet BlogArt" class="project-image">
-                            </a>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-top">
-                                <h3 class="project-title">Blog Art</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/Tominouu/Blog_Art25_groupe_6" title="Code Source" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                    <a href="https://blogart-groupe-6.osc-fr1.scalingo.io/" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-                                </div>
-                            </div>
-                            <p class="project-description">
-                            Réalisation d'un blog d'articles avec une interface simple en PHP, permettant aux utilisateurs de partager des articles et d'interagir avec les contenus.
-                            </p>
-                            <ul class="project-contributors-list">
-                                <a href="https://lili-jeanneflourez.fr/" target="_blank"><li>Lili-Jeanne Flourez</li></a>
-                                <a href="#" target="_blank"><li>Antoine Basset</li></a>
-                                <a href="#" target="_blank"><li>Leon Carter</li></a>
-                            </ul>
-                            <ul class="project-tech-list">
-                                <li>PHP</li><li>HTML</li><li>CSS</li><li>JS</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <a href="https://qrmmi.netlify.app/" target="_blank">
-                                <img src="assets/qrmmi.webp" alt="Aperçu du projet QR Code" class="project-image">
-                            </a>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-top">
-                                <h3 class="project-title">Générateur de QR-CODE</h3>
-                                <div class="project-links">
-                                    <a href="https://github.com/Tominouu/qr-code-generator" title="Code Source" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                    <a href="https://qrmmi.netlify.app/" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-                                </div>
-                            </div>
-                            <p class="project-description">
-                        Création d'un générateur de QR-Code en ligne Open-Source, permettant aux utilisateurs de créer et de télécharger des QR-Codes personnalisés (couleur personnalisable) pour divers usages.
-                            </p>
-                            <ul class="project-tech-list">
-                                <li>PHP</li><li>HTML</li><li>CSS</li><li>JS</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <a href="https://hubline.me" target="_blank">
-                                <img src="assets/hubline.webp" alt="Aperçu du projet Hubline" class="project-image">
-                            </a>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-top">
-                                <h3 class="project-title">Hubline</h3>
-                                <div class="project-links">
-                                    <a href="#" title="Code Source" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                                    <a href="https://hubline.me" title="Voir le site" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
-                                </div>
-                            </div>
-                            <p class="project-description">Un réseau social innovant développé en PHP permettant aux étudiants de se connecter, partager des ressources et collaborer sur des projets académiques.</p>
-                            <ul class="project-tech-list">
-                                <li>PHP</li><li>HTML</li><li>CSS</li><li>JS</li><li>SQL</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="competences" class="section reveal">
-                <h2 class="section-title">Compétences</h2>
-                <div class="skills-grid">
-                    <div>
-                        <h4>Langages</h4>
-                        <ul>
-                            <li>HTML / CSS</li>
-                            <li>Python</li>
-                            <li>Bash</li>
-                            <li>JavaScript</li>
-                            <li>PHP</li>
-                            <li>SQL</li>
-                            <li>C#</li>
-                            <li>Markdown</li>
-                            <li>Ruby on rails</li>
-                            <li>JSON</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Frameworks & Librairies</h4>
-                        <ul>
-                            <li>Laravel</li>
-                            <li>Bootstrap</li>
-                            <li>Tailwind CSS</li>
-                            <li>React (en apprentissage)</li>
-                            <li>GSAP</li>
-                            <li>Selenium (Python)</li>
-
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Outils & Divers</h4>
-                        <ul>
-                            <li>Git & GitHub</li>
-                            <li>Windows & Linux & MacOS</li>
-                            <li>SSH</li>
-                            <li>Vs Code</li>
-                            <li>Ollama</li>
-                            <li>FileZilla</li>
-                            <li>Figma</li>
-                            <li>MySQL / MariaDB</li>
-                            <li>API REST</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact" class="section reveal">
-                <h2 class="section-title">Contact</h2>
-                <div class="contact-content">
-                    <h3>Parlons de votre projet.</h3>
-                    <p>Je suis actuellement en alternance chez Couach mais je suis ouvert à de nouvelles opportunités. N'hésitez pas à me contacter pour en discuter.</p>
-                    <a href="mailto:tom.leclercq@mmibordeaux.com" class="cta-button">Envoyer un e-mail</a>
-                </div>
-            </section>
+      <section id="accueil" class="hero shell">
+        <div class="hero-copy reveal">
+          <h1>Je fabrique<br /><em>des expériences</em><br />qui restent.</h1>
+          <p class="hero-description">
+            Tom Leclercq — développeur fullstack et étudiant en BUT MMI. Je
+            transforme les idées en interfaces sensibles, rapides et vivantes.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#projets"
+              >Explorer les projets <span>↓</span></a
+            ><a class="text-link" href="mailto:tom.leclercq@mmibordeaux.com"
+              >tom.leclercq@mmibordeaux.com <span>↗</span></a
+            >
+          </div>
         </div>
+        <!-- <div class="scroll-cue"><span>SCROLL TO DISCOVER</span><i></i></div> -->
+      </section>
+      <section id="a-propos" class="section shell about reveal">
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <h2>À propos</h2>
+          <span class="heading-line"></span>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p class="lead">
+              Je suis Tom, un développeur créatif qui aime autant comprendre
+              comment les choses fonctionnent que leur donner une vraie
+              personnalité.
+            </p>
+            <p>
+              Passionné par la résolution de problèmes et le développement web,
+              j'ai suivi un parcours orienté vers le numérique depuis mon bac
+              STI2D. Mon cursus en BUT MMI a renforcé mes compétences front-end
+              et back-end, tout en laissant de la place à mon côté créatif.
+            </p>
+            <p>
+              Je suis actuellement en alternance chez Couach et toujours curieux
+              de découvrir de nouveaux terrains de jeu.
+            </p>
+          </div>
+          <div class="profile-frame">
+            <img
+              src="assets/IMG_3165.jpeg"
+              alt="Portrait de Tom Leclercq"
+            /><span class="frame-caption"
+              >TOM LECLERCQ<br /><small>DEVELOPER / DESIGNER</small></span
+            >
+          </div>
+        </div>
+      </section>
+      <section id="projets" class="section shell reveal">
+        <div class="section-heading">
+          <span class="section-number">02</span>
+          <h2>Projets choisis</h2>
+          <span class="heading-line"></span
+          ><span class="section-count">07 réalisations</span>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card project-featured">
+            <a
+              class="project-media"
+              href="https://tind-art.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+              ><img
+                src="assets/tindart.webp"
+                alt="Interface de Tind'Art"
+              /><span class="project-index">01 / 07</span
+              ><span class="project-arrow">↗</span></a
+            >
+            <div class="project-info">
+              <div>
+                <p class="project-kicker">Web design · équipe</p>
+                <h3>Tind'Art</h3>
+              </div>
+              <p>
+                Un tinder artistique pour le musée des beaux-arts de Bordeaux,
+                pensé pour faire découvrir les œuvres autrement.
+              </p>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JS</li>
+              </ul>
+            </div>
+          </article>
+          <article class="project-card">
+            <a
+              class="project-media"
+              href="https://www.figma.com/proto/xdqcK8nvsILtQJKdiNQLVB/R%C3%A9viser-avec-mathAL%C3%89A?page-id=0%3A1&node-id=44-36"
+              target="_blank"
+              rel="noreferrer"
+              ><img
+                src="assets/mathalea.webp"
+                alt="Interface du projet MathALÉA"
+              /><span class="project-index">02 / 07</span
+              ><span class="project-arrow">↗</span></a
+            >
+            <div class="project-info">
+              <div>
+                <p class="project-kicker">UX / UI · prototype</p>
+                <h3>MathALÉA</h3>
+              </div>
+              <p>
+                Une expérience d'onboarding pour personnaliser l'apprentissage
+                par l'élève.
+              </p>
+              <ul>
+                <li>FIGMA</li>
+              </ul>
+            </div>
+          </article>
+          <article class="project-card">
+            <a
+              class="project-media"
+              href="https://kaddie.itch.io/shopping-panic"
+              target="_blank"
+              rel="noreferrer"
+              ><img src="assets/shopping.webp" alt="Jeu Shopping Panic" /><span
+                class="project-index"
+                >03 / 07</span
+              ><span class="project-arrow">↗</span></a
+            >
+            <div class="project-info">
+              <div>
+                <p class="project-kicker">Game design · Unity</p>
+                <h3>Shopping Panic</h3>
+              </div>
+              <p>
+                Un jeu où il faut récolter un maximum d'objets dans un temps
+                limité.
+              </p>
+              <ul>
+                <li>UNITY</li>
+                <li>C#</li>
+              </ul>
+            </div>
+          </article>
+          <article class="project-card">
+            <a
+              class="project-media"
+              href="https://capc-mmi.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+              ><img src="assets/capc.webp" alt="Site du CAPC" /><span
+                class="project-index"
+                >04 / 07</span
+              ><span class="project-arrow">↗</span></a
+            >
+            <div class="project-info">
+              <div>
+                <p class="project-kicker">Direction artistique · web</p>
+                <h3>CAPC</h3>
+              </div>
+              <p>
+                Refonte immersive du site du musée d'art contemporain de
+                Bordeaux.
+              </p>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JS</li>
+              </ul>
+            </div>
+          </article>
+          <article class="project-card">
+            <a
+              class="project-media"
+              href="https://blogart-groupe-6.osc-fr1.scalingo.io/"
+              target="_blank"
+              rel="noreferrer"
+              ><img src="assets/blogart.webp" alt="Site Blog Art" /><span
+                class="project-index"
+                >05 / 07</span
+              ><span class="project-arrow">↗</span></a
+            >
+            <div class="project-info">
+              <div>
+                <p class="project-kicker">Développement · back-end</p>
+                <h3>Blog Art</h3>
+              </div>
+              <p>
+                Un blog d'articles en PHP permettant de partager et commenter
+                des contenus.
+              </p>
+              <ul>
+                <li>PHP</li>
+                <li>SQL</li>
+                <li>JS</li>
+              </ul>
+            </div>
+          </article>
+          <article class="project-card">
+            <a
+              class="project-media"
+              href="https://qrmmi.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+              ><img src="assets/qrmmi.webp" alt="Générateur de QR code" /><span
+                class="project-index"
+                >06 / 07</span
+              ><span class="project-arrow">↗</span></a
+            >
+            <div class="project-info">
+              <div>
+                <p class="project-kicker">Open source · outil</p>
+                <h3>QR Generator</h3>
+              </div>
+              <p>
+                Un générateur de QR-Codes personnalisables et téléchargeables.
+              </p>
+              <ul>
+                <li>PHP</li>
+                <li>HTML</li>
+                <li>JS</li>
+              </ul>
+            </div>
+          </article>
+          <article class="project-card project-wide">
+            <a
+              class="project-media"
+              href="https://hubline.me"
+              target="_blank"
+              rel="noreferrer"
+              ><img src="assets/hubline.webp" alt="Interface de Hubline" /><span
+                class="project-index"
+                >07 / 07</span
+              ><span class="project-arrow">↗</span></a
+            >
+            <div class="project-info">
+              <div>
+                <p class="project-kicker">Produit numérique · social</p>
+                <h3>Hubline</h3>
+              </div>
+              <p>
+                Un réseau social pour connecter les étudiants, partager des
+                ressources et collaborer.
+              </p>
+              <ul>
+                <li>PHP</li>
+                <li>SQL</li>
+                <li>API REST</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="competences" class="section shell reveal">
+        <div class="section-heading">
+          <span class="section-number">03</span>
+          <h2>Stack & outils</h2>
+          <span class="heading-line"></span>
+        </div>
+        <div class="skills-layout">
+          <p class="lead">
+            Des outils pour passer de l'idée au produit, avec toujours une
+            attention particulière portée au détail.
+          </p>
+          <div class="skills-list">
+            <div>
+              <span>01</span>
+              <h3>Langages</h3>
+              <p>
+                HTML / CSS · JavaScript · PHP · Python · SQL · C# · Bash · Ruby
+                on Rails
+              </p>
+            </div>
+            <div>
+              <span>02</span>
+              <h3>Frameworks & librairies</h3>
+              <p>
+                Laravel · React · Tailwind CSS · Bootstrap · GSAP · Selenium
+              </p>
+            </div>
+            <div>
+              <span>03</span>
+              <h3>Outils & environnements</h3>
+              <p>
+                Git / GitHub · Figma · MySQL / MariaDB · Linux · VS Code · SSH ·
+                API REST
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact-section shell reveal">
+        <h2>On construit<br /><em>quelque chose&nbsp;?</em></h2>
+        <a class="contact-mail" href="mailto:tom.leclercq@mmibordeaux.com"
+          >tom.leclercq@mmibordeaux.com <span>↗</span></a
+        >
+        <p class="availability">
+          Actuellement en alternance chez Couach<br />Ouvert à de nouvelles
+          opportunités
+        </p>
+      </section>
     </main>
-
-    <footer class="footer">
-        <div class="social-links">
-            <a href="https://github.com/Tominouu" target="_blank" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-            <a href="https://www.linkedin.com/in/tom-leclercq-823120332/" target="_blank" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-        </div>
-        <p>Conçu et développé par Tom Leclercq.</p>
+    <footer class="site-footer shell">
+      <div class="footer-identity">
+        <span>© <span id="year"></span> Tom Leclercq</span>
+        <span>Conçu et développé à Bordeaux</span>
+      </div>
+      <nav class="footer-links" aria-label="Liens du pied de page">
+        <a href="mailto:tom.leclercq@mmibordeaux.com">E-mail</a>
+        <a href="https://github.com/Tominouu" target="_blank" rel="noreferrer"
+          >GitHub ↗</a
+        >
+        <a
+          href="https://www.linkedin.com/in/tom-leclercq-823120332/"
+          target="_blank"
+          rel="noreferrer"
+          >LinkedIn ↗</a
+        >
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-confidentialite.html">Confidentialité</a>
+        <a href="politique-cookies.html">Cookies</a>
+      </nav>
     </footer>
-
-    <script src="script.js" defer></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
