@@ -167,7 +167,6 @@
 .project-info li {
   color: #a8b0b7;
 }
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 :root {
   --ink: #f1f3f5;
   --muted: #aeb4bb;
@@ -337,6 +336,18 @@ a {
   font-size: clamp(54px, 8.2vw, 116px);
   line-height: 0.92;
   letter-spacing: -0.075em;
+  font-weight: 500;
+}
+.hero-eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  font: 500 12px/1.5 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hero-description strong {
+  color: var(--ink);
   font-weight: 500;
 }
 .hero h1 em,
